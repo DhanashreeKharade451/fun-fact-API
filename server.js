@@ -12,13 +12,15 @@ app.get('/api/fun-fact', async (req,res) => {
     try{
         //axios get request
         const response = await axios.get('https://uselessfacts.jsph.pl/api/v2/facts/random');
+        
 
         const factText = response.data.text;
 
         res.json({
             fact: factText,
-        }            
-        )
+        })
+
+        console.log(fact)
  
     }catch(error){
 
