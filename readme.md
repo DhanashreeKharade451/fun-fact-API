@@ -15,3 +15,12 @@ Sending a generic error message is better because it protects sensitive informat
 Providing a simple message like "Could not fetch fun fact" improves security and keeps the API response clean and user-friendly. Meanwhile, the detailed error information can still be logged on the server for debugging purposes.
 ********************************************************************************************************
 Q3.How might you modify this application to get a fact in a different language if the external API supported it (e.g., with a query parameter like ?language=de)?
+Ans:
+For my current lab code, I could modify the application so the client can request a fact in a specific language using a query parameter.
+
+First, the server would read the language parameter from the request using req.query.language. If the user does not provide a language, the server could default to English (en). Then, when making the Axios request to the external API, the server would pass this language value as a query parameter.
+
+For example, if a client sends a request like:
+
+http://localhost:3000/api/fun-fact?language=de
+
